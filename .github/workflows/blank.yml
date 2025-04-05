@@ -25,6 +25,5 @@ jobs:
           name: my-stack
           template: ./RDSVPCTFinal.yaml
           capabilities: CAPABILITY_NAMED_IAM
-          parameter-overrides: |
-            DBInstanceClass=db.t3.micro
-            BackupRetentionPeriod=7
+          "ParameterValue": "db.t3.micro\nBackupRetentionPeriod=7"
+
