@@ -22,11 +22,9 @@ jobs:
       - name: Deploy CloudFormation stack
         uses: aws-actions/aws-cloudformation-github-deploy@v1
         with:
-          name: my-stack                                     # ✅ Use 'name' instead of 'stack-name'
+          name: my-stack
           template: ./RDSVPCTFinal.yaml
-          capabilities: CAPABILITY_IAM
-          parameter-overrides: |                             # ✅ Use 'parameter-overrides' instead of 'parameters'
-            CFTVPC1=10.0.1.0/24
-            RDS StorageEncryptionKey=aws/rds
-            DBInstanceType=db.t3.micro
-            AutomaticBackupRetention=7
+          capabilities: CAPABILITY_NAMED_IAM
+          parameter-overrides: |
+            DBInstanceClass=db.t3.micro
+            BackupRetentionPeriod=7
