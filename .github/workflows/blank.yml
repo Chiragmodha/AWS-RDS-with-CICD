@@ -26,7 +26,7 @@ jobs:
           template: ./RDSVPCTFinal.yaml
           capabilities: CAPABILITY_IAM
           parameter-overrides: |                             # ✅ Use 'parameter-overrides' instead of 'parameters'
-            VPC CIDR=10.0.1.0/24
+            VPCCIDR=10.0.1.0/24
             RDS StorageEncryptionKey=aws/rds
             DBInstanceType=db.t3.micro
             AutomaticBackupRetention=7
